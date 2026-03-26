@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="/card.css">
+    <title><%= user.name %></title>
+</head>
+<body>
+    <div class="page">
+        <main class="wrapper">
+            <section class="hero">
+                <h1 class="name"><%= user.name %></h1>
+                <div class="occupation-pill"><%= user.occupation %></div>
+            </section>
+
+            <section class="content-grid">
+                <article class="card-box description">
+                    <h2>What do I do?</h2>
+                    <p><%= user.description %></p>
+                </article>
+
+                <div class="center-column">
+                    <article class="card-box achievements">
+                        <h2>My Achievements</h2>
+                        <ul>
+                            <% if (user.achievement1) { %>
+                                <li><%= user.achievement1 %></li>
+                            <% } %>
+
+                            <% if (user.achievement2) { %>
+                                <li><%= user.achievement2 %></li>
+                            <% } %>
+
+                            <% if (user.achievement3) { %>
+                                <li><%= user.achievement3 %></li>
+                            <% } %>
+                        </ul>
+                    </article>
+
+                    <article class="card-box contact">
+                        <h2>Contact</h2>
+                        <div class="contact-actions">
+                            <a class="btn" href="mailto:<%= user.businessEmail %>">Click here to mail me</a>
+                            <a class="btn" href="tel:<%= user.phone %>">Click here to call me</a>
+                        </div>
+                    </article>
+                </div>
+
+                <% if (user.youtube || user.instagram || user.x || user.linkedin || user.facebook) { %>
+                <article class="card-box socials">
+                    <h2>My Social Links</h2>
+
+                    <div class="social-list">
+                        <% if (user.youtube) { %>
+                            <a class="social-card" href="<%= user.youtube %>" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-youtube"></i>
+                                <span>My YouTube</span>
+                            </a>
+                        <% } %>
+
+                        <% if (user.instagram) { %>
+                            <a class="social-card" href="<%= user.instagram %>" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-instagram"></i>
+                                <span>My Instagram</span>
+                            </a>
+                        <% } %>
+
+                        <% if (user.x) { %>
+                            <a class="social-card" href="<%= user.x %>" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-square-x-twitter"></i>
+                                <span>My Twitter</span>
+                            </a>
+                        <% } %>
+
+                        <% if (user.linkedin) { %>
+                            <a class="social-card" href="<%= user.linkedin %>" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-linkedin"></i>
+                                <span>My LinkedIn</span>
+                            </a>
+                        <% } %>
+
+                        <% if (user.facebook) { %>
+                            <a class="social-card" href="<%= user.facebook %>" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-facebook"></i>
+                                <span>My FaceBook</span>
+                            </a>
+                        <% } %>
+                    </div>
+                </article>
+                <% } %>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-title">Powered By 25CW</div>
+        </footer>
+    </div>
+</body>
+</html>

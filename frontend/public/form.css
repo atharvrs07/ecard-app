@@ -1,0 +1,184 @@
+/* Reset + base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-gradient: linear-gradient(135deg, #0f172a, #1e293b);
+  --card-bg: rgba(15, 23, 42, 0.7);
+  --accent: #38bdf8;
+  --accent-soft: rgba(56, 189, 248, 0.2);
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --error: #ef4444;
+  --radius-lg: 18px;
+  --shadow-soft: 0 24px 60px rgba(15, 23, 42, 0.7);
+  --transition-fast: 0.18s ease-out;
+  --field-bg: rgba(15, 23, 42, 0.8);
+}
+
+/* Page layout */
+body {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", Roboto, sans-serif;
+  color: var(--text-main);
+  background: var(--bg-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* Wrapper */
+.wrapper {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* Title */
+.form-title {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.form-title h1 {
+  font-size: clamp(1.6rem, 2vw + 1rem, 2.2rem);
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  color: #f9fafb;
+}
+
+.form-title h1 span {
+  color: var(--accent);
+}
+
+/* Form container */
+.form-container {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 24px 22px;
+}
+
+/* Form layout */
+#userForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Inputs + textarea */
+#userForm input,
+#userForm textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: var(--field-bg);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  padding: 11px 12px;
+  outline: none;
+  transition: border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+#userForm input::placeholder,
+#userForm textarea::placeholder {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Textarea styling */
+#userForm textarea {
+  min-height: 90px;
+  resize: vertical;
+  line-height: 1.4;
+}
+
+/* Focus states */
+#userForm input:focus,
+#userForm textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent-soft);
+  background-color: rgba(15, 23, 42, 0.95);
+  transform: translateY(-1px);
+}
+
+/* Grouping ideas (optional but nice) */
+#userForm input[name="achievement1"],
+#userForm input[name="achievement2"],
+#userForm input[name="achievement3"] {
+  font-size: 0.92rem;
+}
+
+/* Button */
+#userForm button[type="submit"] {
+  margin-top: 6px;
+  width: 100%;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #0ea5e9, #22c55e);
+  color: #0b1120;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 11px 16px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 12px 30px rgba(34, 197, 94, 0.35);
+  transition: transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    filter var(--transition-fast);
+}
+
+#userForm button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px rgba(34, 197, 94, 0.45);
+  filter: brightness(1.03);
+}
+
+#userForm button[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.75);
+}
+
+/* Small helper text style (if you add any later) */
+.helper-text {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: -6px;
+}
+
+/* Mobile tweaks */
+@media (max-width: 480px) {
+  body {
+    padding: 18px;
+  }
+
+  .form-container {
+    padding: 20px 18px;
+  }
+
+  #userForm {
+    gap: 12px;
+  }
+}
+
+/* Slightly wider view */
+@media (min-width: 768px) {
+  .form-container {
+    padding: 28px 26px;
+  }
+
+  .form-title {
+    margin-bottom: 22px;
+  }
+}

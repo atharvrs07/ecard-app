@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/form.css">
+    <title>Form - ECard Generator</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form-title">
+            <h1>Build your ECard NOW!</h1>
+        </div>
+
+        <div class="form-container">
+            <form id="userForm">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="text" name="occupation" placeholder="Occupation" required>
+                <textarea name="description" placeholder="Describe more about the work you do..." required></textarea>
+
+                <input type="text" name="achievement1" placeholder="Achievement 1" required>
+                <input type="text" name="achievement2" placeholder="Achievement 2" required>
+                <input type="text" name="achievement3" placeholder="Achievement 3" required>
+
+                <input type="email" name="bus-email" placeholder="Your Business E-Mail ID" required>
+                <input type="tel" name="phone" placeholder="Your Business Phone No." required>
+                <input type="email" name="per-email" placeholder="Your Personal Email (This won't be displayed on the card)" required>
+
+                <input type="text" name="youtube" placeholder="YouTube Link">
+                <input type="text" name="instagram" placeholder="Instagram Link">
+                <input type="text" name="x" placeholder="X (Twitter) Link">
+                <input type="text" name="linkedin" placeholder="LinkedIn Profile Link">
+                <input type="text" name="facebook" placeholder="Facebook Profile Link">
+
+                <button type="submit">Pay & Create My Card</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="/form.js"></script>
+</body>
+</html>
