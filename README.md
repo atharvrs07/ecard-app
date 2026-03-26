@@ -1,0 +1,2 @@
+Day 1 : Created the base Card Template, will edit it later (Looks stunning tho) 10th March 2026
+Day 2 : Created the html and css form, it works well, and integrating it with backend, tested the backend at 8:56 PM IST 11th March 2026
